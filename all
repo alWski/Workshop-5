@@ -1,0 +1,64 @@
+1)
+y = int(input())
+
+if y % 4 == 0:
+    if y % 100 == 0:
+        if y % 400 == 0:
+            print(366)
+        else:
+            print(365)
+    else:
+        print(366)
+else:
+    print(365)
+
+2)
+import math
+
+def distance(x1, y1, x2, y2):
+    return math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+
+def check(xc, yc, r, x, y):
+    dist = distance(xc, yc, x, y)
+    
+    if dist < r:
+        return "Точка находится внутри окружности"
+    elif dist == r:
+        return "Точка лежит на окружности"
+    else:
+        return "Точка находится за пределами окружности"
+
+xc = int(input())
+yc = int(input())
+r = int(input())
+x = int(input())
+y = int(input())
+
+result = check(xc, yc, r, x, y)
+print(result)
+
+3)
+n = int(input())
+
+n1 = n // 1000
+n2 = (n - (n1 * 1000)) // 100
+n3 = (n - (n1 * 1000) - (n2 * 100)) // 10
+n4 = n - (n1 * 1000) - (n2 * 100) - (n3 * 10) 
+
+if n1 == n4 and n2 == n3:
+    print("настоящие")
+else:
+    print("кривое")
+
+4)
+number = int(input())
+if number // 10 == 1:
+    print(number, "попугаев")
+else:
+    last_digit = number % 10
+    if last_digit == 1:
+        print(number, "попугай")
+    elif 2 <= last_digit <= 4:
+        print(number, "попугая")
+    else:
+        print(number, "попугаев")
