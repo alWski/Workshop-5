@@ -86,3 +86,76 @@ r = int(input())
 k = round((v / r ** 2) * 703, 2)
 
 print(kl(k))
+
+6)
+day1 = int(input())
+day2 = int(input())
+day3 = int(input())
+
+count = 1
+if day1 == day2:
+    count += 1
+if day1 == day3:
+    count += 1
+if day2 == day3:
+    count += 1
+if count == 4:
+    count -= 1
+print(count)
+
+7)
+N, K, M = map(int, input().split())
+
+if M >= K:
+    pohs = (M - K) 
+else:
+    pohs = (N - K + M)
+if K >= M:
+    prhs = (K - M) 
+else:
+    prhs = (N - M + K)
+
+print(min(pohs, prhs)-1)
+
+8)
+knut = int(input())
+
+galleons = knut // (17 * 29)
+knut2 = knut % (17 * 29)
+sickles = knut2 // 29
+kknut = knut2 % 29
+
+if galleons > 0:
+    print (f"{galleons} галлеонов ")
+if sickles > 0:
+    print(f"{sickles} сиклей ")
+if kknut > 0:
+    print(f"{kknut} кнатов")
+
+ 9)
+h = list(map(int, input().split()))
+
+maxH = max(h)
+minH = min(h)
+middleH = sum(h) - maxH - minH
+
+print(maxH, middleH, minH)
+
+10)
+def check_pin(pin):
+    if len(pin) != 4 or not pin.isdigit():
+        return "ERROR"
+
+    if len(set(pin)) != 4:
+        return "ERROR"
+
+    birth_years = set(range(1900, 2051))
+    if int(pin) in birth_years:
+        return "ERROR"
+
+    return "OK"
+
+pin_code = input()
+
+result = check_pin(pin_code)
+print(result)
